@@ -1,0 +1,41 @@
+#include <stdio.h>
+int main() {
+    int i;      
+    int tamanho = 6;
+
+    int vetorX[6]; 
+    int vetorY[6]; 
+    int vetorD[6]; 
+
+    printf("======================================================\n");
+    printf("ATIVIDADE 2: Subtracao - Dano Efetivo (Tamanho %d)\n", tamanho);
+    printf("======================================================\n");
+
+    printf("--- Leitura do Vetor X (Pontos de Ataque) ---\n");
+    for (i = 0; i < tamanho; i++) {
+        printf("Digite o ponto de ataque %d: ", i + 1);
+        scanf("%d", &vetorX[i]);
+    }
+
+    printf("\n--- Leitura do Vetor Y (Pontos de Defesa) ---\n");
+    for (i = 0; i < tamanho; i++) {
+        printf("Digite o ponto de defesa %d: ", i + 1);
+        scanf("%d", &vetorY[i]);
+    }
+
+    for (i = 0; i < tamanho; i++) {
+        vetorD[i] = vetorX[i] - vetorY[i];
+    }
+
+    printf("\n--- Vetor D (Dano Efetivo Causado) ---\n");
+    printf("Dano Efetivo (D): [");
+    for (i = 0; i < tamanho; i++) {
+        printf("%d", vetorD[i]);
+        if (i < tamanho - 1) {
+            printf(", ");
+        }
+    }
+    printf("]\n");
+
+    return 0;
+}
