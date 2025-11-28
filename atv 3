@@ -1,0 +1,42 @@
+#include <stdio.h>
+int main() {
+    int i;       
+    int tamanho = 4;
+
+    int vetorA[4];
+    int vetorB[4]; 
+    int vetorM[4]; 
+
+    printf("================================================================\n");
+    printf("ATIVIDADE 3: Multiplicacao Elemento a Elemento (Tamanho %d)\n", tamanho);
+    printf("================================================================\n");
+
+    printf("--- Leitura do Vetor A (Dano Base) ---\n");
+    for (i = 0; i < tamanho; i++) {
+        printf("Digite o dano base %d: ", i + 1);
+        scanf("%d", &vetorA[i]);
+    }
+
+    printf("\n--- Leitura do Vetor B (Fator de Bonus de Combo) ---\n");
+    for (i = 0; i < tamanho; i++) {
+        printf("Digite o fator de bonus %d: ", i + 1);
+        scanf("%d", &vetorB[i]);
+    }
+
+    for (i = 0; i < tamanho; i++) {
+        vetorM[i] = vetorA[i] * vetorB[i];
+    }
+
+    // 4. Exibição do Vetor M (Dano Multiplicado)
+    printf("\n--- Vetor M (Dano Multiplicado pelo Combo) ---\n");
+    printf("Dano Multiplicado (M): [");
+    for (i = 0; i < tamanho; i++) {
+        printf("%d", vetorM[i]);
+        if (i < tamanho - 1) {
+            printf(", ");
+        }
+    }
+    printf("]\n");
+
+    return 0;
+}
