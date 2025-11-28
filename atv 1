@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+
+int main() {
+    int i;         
+    int tamanho = 5;
+
+    int vetorA[5]; 
+    int vetorB[5]; 
+    int vetorS[5]; 
+
+    printf("========================================================\n");
+    printf("ATIVIDADE 1: Soma de Atributos de Personagens (Tamanho %d)\n", tamanho);
+    printf("========================================================\n");
+    printf("--- Leitura do Vetor A (Atributos Base) ---\n");
+    for (i = 0; i < tamanho; i++) {
+        printf("Digite o atributo base %d: ", i + 1);
+        scanf("%d", &vetorA[i]);
+    }
+
+    printf("\n--- Leitura do Vetor B (Bonus de Equipamento) ---\n");
+    for (i = 0; i < tamanho; i++) {
+        printf("Digite o bonus de equipamento %d: ", i + 1);
+        scanf("%d", &vetorB[i]);
+    }
+
+    for (i = 0; i < tamanho; i++) {
+        vetorS[i] = vetorA[i] + vetorB[i];
+    }
+
+    printf("\n--- Vetor S (Status Final do Personagem) ---\n");
+    printf("Status Final (S): [");
+    for (i = 0; i < tamanho; i++) {
+        printf("%d", vetorS[i]);
+        if (i < tamanho - 1) {
+            printf(", ");
+        }
+    }
+    printf("]\n");
+
+    return 0;
+}
