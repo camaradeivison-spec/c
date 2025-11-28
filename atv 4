@@ -1,0 +1,44 @@
+#include <stdio.h>
+int main() {
+    int i;    
+    int tamanho = 5;
+
+    int vetorA[5];    
+    int vetorB[5];  
+    int sao_iguais = 1;
+
+    printf("=======================================================\n");
+    printf("ATIVIDADE 5: Comparacao - Teste de Checagem (Tamanho %d)\n", tamanho);
+    printf("=======================================================\n");
+
+
+    printf("--- Leitura do Vetor A (Estado do Replay) ---\n");
+    for (i = 0; i < tamanho; i++) {
+        printf("Digite a posicao %d do replay: ", i + 1);
+        scanf("%d", &vetorA[i]);
+    }
+
+
+    printf("\n--- Leitura do Vetor B (Estado do Save) ---\n");
+    for (i = 0; i < tamanho; i++) {
+        printf("Digite a posicao %d do save: ", i + 1);
+        scanf("%d", &vetorB[i]);
+    }
+
+    for (i = 0; i < tamanho; i++) {
+        if (vetorA[i] != vetorB[i]) {
+            sao_iguais = 0; // Se encontrar um elemento diferente
+            break;      
+        }
+    }
+
+    // 4. Exibição do Resultado da Comparação
+    printf("\n--- Resultado do Teste de Checagem ---\n");
+    if (sao_iguais == 1) {
+        printf("REPLAY: Perfeito! (Vetores A e B sao iguais)\n");
+    } else {
+        printf("REPLAY: Desincronizado! (Vetores A e B sao diferentes)\n");
+    }
+
+    return 0;
+}
